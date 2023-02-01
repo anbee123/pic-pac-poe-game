@@ -20,3 +20,9 @@
 # game.checkforWin()
 # game.diplayWin()
 
+class PyPacPoe():
+  def __init__(self):
+    self.current_player = "X"
+    self.player_selection = ""
+    self.game_over = False
+    self.turns = 0

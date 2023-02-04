@@ -22,7 +22,8 @@
 
 class PyPacPoe():
   def __init__(self):
-    return
+    self.current_player = "X"
+
   #display a welcome message
   def display_welcome_message(self):
       print('''
@@ -41,7 +42,10 @@ class PyPacPoe():
         -----------
        3)   |   |   
        ''')
+  def display_turn(self):
+      print(f"Player {self.current_player} Move:")
 
 new_game = PyPacPoe()
-new_game.display_welcome_message() 
-new_game.display_board()     
+# new_game.display_welcome_message() 
+# new_game.display_board()    
+# new_game.display_turn() 

@@ -44,17 +44,24 @@ class PyPacPoe():
             ''')   
   
   def display_board(self):
-      print('''
+      print(f'''
           A   B   C
 
-       1)   |   | 
+       1) {self.current_board['a1']}  | {self.current_board['b1']}  | {self.current_board['c1']}
         -----------
-       2)   |   |  
+       2) {self.current_board['a2']}  | {self.current_board['b2']}  | {self.current_board['c2']}
         -----------
-       3)   |   |   
+       3) {self.current_board['a3']}  | {self.current_board['b3']}  | {self.current_board['c3']} 
        ''')
   def display_turn(self):
       print(f"Player {self.current_player} Move(exapmle B2):")
+
+  def switch_player(self):
+      if self.current_player == "X":
+          self.current_player = "O" 
+      else:
+          self.current_player = "X" 
+
 
   def get_player_move(self):
       player_move = input("enter your move: ").lower()
@@ -64,12 +71,15 @@ class PyPacPoe():
       while self.current_board[player_move] != None:
         player_move = input("This space istaken, try again: ").lower()
         self.current_board[player_move] = self.current_player
-  
-   def display_winner(self):
-     print(f"Player {self.current_player} has won the game!")
 
-   def display_tie(self):
-     print("It was a tie game!")
+  def check_for_win(self):
+  
+
+  def display_winner(self):
+       print(f"Player {self.current_player} has won the game!")
+
+  def display_tie(self):
+       print("It was a tie game!")
     
 
     
@@ -79,4 +89,6 @@ new_game = PyPacPoe()
 # new_game.display_welcome_message() 
 # new_game.display_board()    
 # new_game.display_turn() 
-new_game.get_player_move()
+# new_game.get_player_move()
+print(new_game.current_player)
+new_game.switch_player()

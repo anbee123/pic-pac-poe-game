@@ -64,6 +64,13 @@ class PyPacPoe():
       while self.current_board[player_move] != None:
         player_move = input("This space istaken, try again: ").lower()
         self.current_board[player_move] = self.current_player
+  
+   def display_winner(self):
+     print(f"Player {self.current_player} has won the game!")
+
+   def display_tie(self):
+     print("It was a tie game!")
+    
 
     
       

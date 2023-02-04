@@ -28,7 +28,7 @@ class PyPacPoe():
       "a2": None,
       "a3": None, 
       "b1": None,
-      "b2": None.
+      "b2": None,
       "b3": None,
       "c1": None,
       "c2": None,
@@ -57,8 +57,16 @@ class PyPacPoe():
       print(f"Player {self.current_player} Move(exapmle B2):")
 
   def get_player_move(self):
-      player_move = input("enter your move:")
-      print(player_move)
+      player_move = input("enter your move: ").lower()
+      while not player_move in self.current_board:
+        player_move = input("that's not a valid move, try again: ").lower()
+
+      while self.current_board[player_move] != None:
+        player_move = input("This space istaken, try again: ").lower()
+        self.current_board[player_move] = self.current_player
+
+    
+      
 
 new_game = PyPacPoe()
 # new_game.display_welcome_message() 

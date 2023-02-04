@@ -43,9 +43,14 @@ class PyPacPoe():
        3)   |   |   
        ''')
   def display_turn(self):
-      print(f"Player {self.current_player} Move:")
+      print(f"Player {self.current_player} Move(exapmle B2):")
+
+  def get_player_move(self):
+      player_move = input("enter your move:")
+      print(player_move)
 
 new_game = PyPacPoe()
 # new_game.display_welcome_message() 
 # new_game.display_board()    
 # new_game.display_turn() 
+new_game.get_player_move()
